@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六爻排卦</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>六爻排卦</h1>
+    <form id="hexagramForm">
+        <label for="yao1">第一爻:</label>
+        <input type="text" id="yao1" maxlength="1"><br>
+        <label for="yao2">第二爻:</label>
+        <input type="text" id="yao2" maxlength="1"><br>
+        <label for="yao3">第三爻:</label>
+        <input type="text" id="yao3" maxlength="1"><br>
+        <label for="yao4">第四爻:</label>
+        <input type="text" id="yao4" maxlength="1"><br>
+        <label for="yao5">第五爻:</label>
+        <input type="text" id="yao5" maxlength="1"><br>
+        <label for="yao6">第六爻:</label>
+        <input type="text" id="yao6" maxlength="1"><br>
+        <button type="button" onclick="generateHexagram()">生成卦象</button>
+    </form>
+    <h2>卦象</h2>
+    <div id="hexagram"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
