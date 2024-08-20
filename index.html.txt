@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divination Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .btn {
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .text-area {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>卦象排盘系统</h1>
+    <div class="input-group">
+        <label for="username">用户名:</label>
+        <input type="text" id="username">
+    </div>
+    <div class="input-group">
+        <label for="yao">爻支输入:</label>
+        <select id="yao1">
+            <option value="少阳">少阳</option>
+            <option value="少阴">少阴</option>
+            <option value="极阳">极阳</option>
+            <option value="极阴">极阴</option>
+        </select>
+        <select id="yao2">
+            <option value="少阳">少阳</option>
+            <option value="少阴">少阴</option>
+            <option value="极阳">极阳</option>
+            <option value="极阴">极阴</option>
+        </select>
+        <select id="yao3">
+            <option value="少阳">少阳</option>
+            <option value="少阴">少阴</option>
+            <option value="极阳">极阳</option>
+            <option value="极阴">极阴</option>
+        </select>
+        <select id="yao4">
+            <option value="少阳">少阳</option>
+            <option value="少阴">少阴</option>
+            <option value="极阳">极阳</option>
+            <option value="极阴">极阴</option>
+        </select>
+        <select id="yao5">
+            <option value="少阳">少阳</option>
+            <option value="少阴">少阴</option>
+            <option value="极阳">极阳</option>
+            <option value="极阴">极阴</option>
+        </select>
+        <select id="yao6">
+            <option value="少阳">少阳</option>
+            <option value="少阴">少阴</option>
+            <option value="极阳">极阳</option>
+            <option value="极阴">极阴</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label for="datetime">年月日时:</label>
+        <input type="text" id="datetime" placeholder="输入年月日时">
+    </div>
+    <div>
+        <button class="btn" onclick="submitData()">提交数据</button>
+    </div>
+
+    <script>
+        function submitData() {
+            const url = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+            const data = {
+                username: document.getElementById('username').value,
+                yao1: document.getElementById('yao1').value,
+                yao2: document.getElementById('yao2').value,
+                yao3: document.getElementById('yao3').value,
+                yao4: document.getElementById('yao4').value,
+                yao5: document.getElementById('yao5').value,
+                yao6: document.getElementById('yao6').value,
+                datetime: document.getElementById('datetime').value
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log(result);
+                alert('数据提交成功！');
+            });
+        }
+    </script>
+</body>
+</html>
+
+
